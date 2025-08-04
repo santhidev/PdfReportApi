@@ -20,13 +20,14 @@ namespace PdfReportApi.Controllers
         [HttpGet("pdf/by-account/{acn}")]
         public async Task<IActionResult> GetCustomerTransactionPdfByAccount(string acn)
         {
-            var transactions = await _unitOfWork.CustomerTransactions.GetAllAsync();
-            var transaction = transactions.FirstOrDefault(t => t.ACN == acn);
+            var transactions = await _unitOfWork.CustomerTransactions.GetByAccountAsync(acn);
 
-            if (transaction == null)
+            if (transactions == null)
                 return NotFound($"ไม่พบข้อมูลสำหรับเลขบัญชี {acn}");
 
-            var pdfBytes = _pdfReportService.GenerateCustomerTransactionReport(transaction);
+            var transactionList = transactions.ToList();
+
+            var pdfBytes = _pdfReportService.GenerateCustomerTransactionReport(transactionList);
             return File(pdfBytes, "application/pdf", $"transaction_{acn}.pdf");
         }
 
