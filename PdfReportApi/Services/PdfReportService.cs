@@ -1,4 +1,5 @@
-﻿using PdfReportApi.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PdfReportApi.Models;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
@@ -62,9 +63,17 @@ public class PdfReportService
                         table.Cell().Text(transaction.NEXT_DUE);
                     });
 
-                    content.Item().PaddingTop(20).Text("หมายเหตุ / ลายเซ็น:");
-                    content.Item().LineHorizontal(1);
-                });
+
+                    content.Item().Text("ข้าพเจ้ามีความประสงค์จะผ่อนชำระหนี้ดังกล่าว โดยแบ่งเป็นงวดๆ ตามความสามารถในการชำระของข้าพเจ้า ดังรายละเอียดต่อไปนี้");
+                    content.Item().Text("เดือนละ จำนวนเงิน (บาท) ................ บาท (...................)");
+
+                    content.Item().Text("จึงเรียนมาเพื่อโปรดพิจารณาอนุมัติด้วย จะเป็นพระคุณยิ่ง");
+
+                    content.Item().Text("\nลงชื่อ...........................................ผู้กู้\n(..................................................)");
+                    content.Item().Text("ลงชื่อ...........................................ผู้จัดการ\n(..................................................)");
+                    content.Item().Text("ลงชื่อ...........................................พยาน\n(..................................................)");
+
+            });
 
                 page.Footer().AlignCenter().Text(x =>
                 {
