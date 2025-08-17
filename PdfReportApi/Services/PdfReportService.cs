@@ -16,7 +16,7 @@ public class PdfReportService
         _env = env;
 
         // ลงทะเบียนฟอนต์ THSarabunNew
-        FontManager.RegisterFont(File.OpenRead(Path.Combine(_env.WebRootPath, "fonts", "THSarabunNew.ttf")));
+        FontManager.RegisterFont(File.OpenRead(Path.Combine(_env.WebRootPath, "fonts", "THSarabun.ttf")));
 
     }
 
