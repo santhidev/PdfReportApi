@@ -68,23 +68,18 @@ public class PdfReportService
                         content.Item().AlignRight().Text($"{thaiDate}");
                         content.Item().Row(row => {
                             row.Spacing(10);
-                            row.AutoItem().Text($"เรียน: {transaction.NAMGU}");
-                            row.AutoItem().Text("กลุ่มที่: 12345");
-                            row.AutoItem().Text($"CIF: {transaction.ACNGU}");
+                            row.AutoItem().Text($"เรียน: {transaction.NAMGU}   กลุ่มที่: 12345   CIF: {transaction.ACNGU}");
                         });
                         content.Item().Text("ที่อยู่: 65/1");
                         content.Item().Row(row =>
                         {
                             row.Spacing(10);
-                            row.AutoItem().Text("          หมู่ที่: ");
-                            row.AutoItem().Text("ตำบล/แขวง: ");
-                            row.AutoItem().Text("อำเภอ/เขต: อื่นๆ");
+                            row.AutoItem().Text("          หมู่ที่:    ตำบล/แขวง:    อำเภอ/เขต: อื่นๆ");
                         });
                         content.Item().Row(row =>
                         {
                             row.Spacing(10);
-                            row.AutoItem().Text("          จังหวัด: อื่นๆ");
-                            row.AutoItem().Text("รหัสไปรษณีย์: ");
+                            row.AutoItem().Text("          จังหวัด: อื่นๆ   รหัสไปรษณีย์: ");
                         });
                         content.Item().Text($"ธนาคาร ขอเรียนให้ท่านทราบในฐานะผู้คำประกันเงินกู้ของ {transaction.NAM} เจ้าของเลขที่ สัญญา 800112121121");
                         content.Item().Text($"ลูกค้า กลุ่มที่: 0    CIF: {transaction.ACN}    มีหนี้ครบกำหนดชำระ ณ วันที่ {transaction.NEXT_DUE} ดังนี้");
