@@ -11,10 +11,10 @@ namespace PdfReportApi.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly PdfReportService _pdfReportService;
 
-        public ReportController(IUnitOfWork unitOfWork)
+        public ReportController(IUnitOfWork unitOfWork, PdfReportService pdfReportService)
         {
             _unitOfWork = unitOfWork;
-            _pdfReportService = new PdfReportService(); // หรือใช้ DI ก็ได้
+            _pdfReportService = pdfReportService; // หรือใช้ DI ก็ได้
         }
 
         [HttpGet("pdf/by-account/{acn}")]
@@ -27,7 +27,7 @@ namespace PdfReportApi.Controllers
 
             var transactionList = transactions.ToList();
 
-            var pdfBytes = _pdfReportService.GenerateCustomerTransactionReport(transactionList);
+            var pdfBytes = _pdfReportService.GenerateCustomerTransactionReport(transactionList, "นายสมมุติ ตั้งใจจริง");
             return File(pdfBytes, "application/pdf", $"transaction_{acn}.pdf");
         }
 

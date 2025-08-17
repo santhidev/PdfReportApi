@@ -31,5 +31,12 @@ namespace PdfReportApi.Models
         public string DUIN { get; set; }            // ดอกเบี้ย
         public string NEXT_DUE { get; set; }       // วันครบกำหนดถัดไป
 
+
+        public string? PrefixCode { get; set; }
+        public string? EmpFname { get; set; }
+        public string? EmpLname { get; set; }
+        public short? PositionLevel { get; set; }
+
+
     }
 }

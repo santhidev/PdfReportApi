@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36221.1 d17.14
+VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReportApi", "PdfReportApi\PdfReportApi.csproj", "{DCE4BC81-26F2-4CA9-BB0A-60D0152F135C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestPDFPreview", "QuestPDFPreview\QuestPDFPreview.csproj", "{7ADB3BB0-3642-46B0-AF72-8D74C3446103}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DCE4BC81-26F2-4CA9-BB0A-60D0152F135C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCE4BC81-26F2-4CA9-BB0A-60D0152F135C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCE4BC81-26F2-4CA9-BB0A-60D0152F135C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ADB3BB0-3642-46B0-AF72-8D74C3446103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ADB3BB0-3642-46B0-AF72-8D74C3446103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ADB3BB0-3642-46B0-AF72-8D74C3446103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ADB3BB0-3642-46B0-AF72-8D74C3446103}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

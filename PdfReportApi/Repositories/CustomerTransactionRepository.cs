@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using PdfReportApi.Models;
 using PdfReportApi.Repositories;
 
@@ -13,7 +14,12 @@ public class CustomerTransactionRepository : ICustomerTransactionRepository
 
     public async Task<IEnumerable<CustomerTransaction>?> GetByAccountAsync(string acn)
     {
-        return await _context.CustomerTransactions.Where(t => t.ACN == acn).ToListAsync();
+
+        var param = new SqlParameter("@ACN", acn);
+        return await _context.CustomerTransactions
+            .FromSqlRaw("EXEC GetGL_Letter_By_EmployeeLevel @ACN", param)
+            .ToListAsync();
+
     }
 
 
