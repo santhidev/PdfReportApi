@@ -29,12 +29,12 @@ public class PdfReportService
             foreach (var transaction in transactions)
             {
                 var prefixTitle = string.Empty;
-                if (transaction.PrefixCode.Equals(1))
+                if (transaction.PrefixCode.Equals("1"))
                     prefixTitle = "นาย";
-                else if (transaction.PrefixCode.Equals(2))
+                else if (transaction.PrefixCode.Equals("2"))
                     prefixTitle = "นาง";
-                else if (transaction.PrefixCode.Equals(3))
-                    prefixTitle = "นาสาว";
+                else if (transaction.PrefixCode.Equals("3"))
+                    prefixTitle = "นางสาว";
                 else
                     prefixTitle = "คุณ";
 
