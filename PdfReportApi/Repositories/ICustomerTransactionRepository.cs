@@ -7,6 +7,7 @@ namespace PdfReportApi.Repositories
 
         Task<IEnumerable<CustomerTransaction>> GetAllAsync();
         Task<IEnumerable<CustomerTransaction>?> GetByAccountAsync(string acn);
+        Task<IEnumerable<CustomerTransaction>?> GetByCIDAsync(string acn);
         Task<CustomerTransaction?> GetByIdAsync(int id);
         Task AddAsync(CustomerTransaction transaction);
         void Update(CustomerTransaction transaction);

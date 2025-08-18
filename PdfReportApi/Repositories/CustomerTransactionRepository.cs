@@ -22,6 +22,15 @@ public class CustomerTransactionRepository : ICustomerTransactionRepository
 
     }
 
+    public async Task<IEnumerable<CustomerTransaction>?> GetByCIDAsync(string cid)
+    {
+
+        var param = new SqlParameter("@CID", cid);
+        return await _context.CustomerTransactions
+            .FromSqlRaw("EXEC GetGL_Letter_By_EmployeeLevel @CID", param)
+            .ToListAsync();
+
+    }
 
     public async Task<IEnumerable<CustomerTransaction>> GetAllAsync()
     {
